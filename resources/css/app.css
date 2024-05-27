@@ -70,6 +70,9 @@ a.view-link {
     color: #fff;
     background-color: #2f2e2c;
     border-color: #d58512;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1.5rem;
 }
 
 .delete-link {
@@ -116,6 +119,12 @@ button.action-link {
 
 .create-blog-button:hover {
     background-color: #0056b3;
+}
+
+.form-group span {
+    color: rgb(201, 85, 85);
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 .pagination {
@@ -241,10 +250,4 @@ p {
     100% {
         transform: translateY(0);
     }
-}
-
-div.error {
-    color: red;
-    font-weight: 700;
-    margin-top: 10px;
 }
