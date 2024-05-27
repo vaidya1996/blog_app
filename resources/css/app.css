@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* Body */
 
@@ -125,6 +125,15 @@ button.action-link {
     color: rgb(201, 85, 85);
     font-weight: 700;
     margin-top: 10px;
+}
+
+div.success {
+    background-color: rgb(108, 224, 108);
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .pagination {

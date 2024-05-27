@@ -22,8 +22,8 @@
         </div>
         <div class="form-group">
           <label for="desc">Description:</label>
-          <textarea name="desc" id="desc" placeholder="Enter description...">{{ old('desc') }}</textarea>
-          @error("desc")
+          <textarea name="description" id="description" placeholder="Enter description...">{{ old('desc') }}</textarea>
+          @error("description")
       <span>{{ $message }}</span>
     @enderror
         </div>

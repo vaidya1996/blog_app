@@ -28,12 +28,17 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+       $data = $request->validate([
             "title"=> "required|string",
-            "desc"=>"required|string"
+            "description"=>"required|string"
         ]);
 
-        echo "Form submitted successfully!";
+        //echo "Form submitted successfully!";
+
+        $data['user_id'] = 1;
+        blog::create($data);
+
+        return to_route('blog.index')->with('success','Blog created successfully!');
     }
 
     /**
