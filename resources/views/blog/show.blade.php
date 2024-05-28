@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div>
         <div class="container">
             <h2>Blog Details</h2>
@@ -18,4 +18,4 @@
             <a href="{{route('blog.edit', $blog)}}" class="action-link edit-link">Edit</a>
         </div>
     </div>
-</x-layout>
+</x-app-layout>

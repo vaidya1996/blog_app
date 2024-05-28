@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
   <div>
     <div class="container">
       <!-- Handling errors -->
@@ -33,4 +33,4 @@
       <a href="{{route('blog.index')}}" class="active-link view-link">Back</a>
     </div>
   </div>
-</x-layout>
+</x-app-layout>

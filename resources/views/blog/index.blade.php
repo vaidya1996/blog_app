@@ -1,7 +1,7 @@
-<x-layout>
+<x-app-layout>
        <div>
               <div class="container">
-                     <a href="#" class="create-blog-button">Create New Blog</a>
+                     <a href="{{route('blog.create')}}" class="create-blog-button">Create New Blog</a>
                      <table>
                             <thead>
                                    <tr>
@@ -40,4 +40,4 @@
                      </div>
               </div>
        </div>
-</x-layout>
+</x-app-layout>

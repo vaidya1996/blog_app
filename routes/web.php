@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-# Method 1
+Route::middleware(['auth','verified'])->group(function () {
+    # Method 1
 // Route::get("blog", [BlogController::class,"index"])->name("blog.index");
 // Route::get("blog/create", [BlogController::class,"create"])->name("blog.create");
 // Route::post("blog", [BlogController::class,"store"])->name("blog.store");
@@ -19,4 +21,16 @@ Route::get('/', function () {
 
 # Method 2
 Route::resource("blog", BlogController::class);
+});
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
