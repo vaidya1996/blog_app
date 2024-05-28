@@ -56,7 +56,7 @@ class BlogController extends Controller
      */
     public function edit(blog $blog)
     {
-        return view("blog.edit");
+        return view("blog.edit", ["blog"=> $blog]);
     }
 
     /**
@@ -64,7 +64,14 @@ class BlogController extends Controller
      */
     public function update(Request $request, blog $blog)
     {
-        //
+        $data = $request->validate([
+            "title"=> "required|string",
+            "description"=> "required|string"
+        ]);
+
+        $blog->update($data);
+
+        return to_route("blog.show", $blog)->with("success","Blog updated successfully!");
     }
 
     /**

@@ -22,7 +22,7 @@
                                           <td>{{$blog->created_at}}</td>
                                           <td class="action-buttons">
                                                         <a href="{{route('blog.show', $blog)}}" class="action-link view-link">View</a>
-                                                        <a href="#" class="action-link edit-link">Edit</a>
+                                                        <a href="{{route('blog.edit', $blog)}}" class="action-link edit-link">Edit</a>
                                                         <button onclick="return confirm('Are you sure want to delete?')"
                                                                       class="action-link delete-link">Delete</button>
                                           </td>
