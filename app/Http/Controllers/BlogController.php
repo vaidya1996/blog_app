@@ -12,7 +12,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view("blog.index");
+        $blogs = Blog::orderBy("created_at","desc")->paginate(10);
+        // dd($blogs);
+        return view("blog.index", ["blogs"=> $blogs]);
     }
 
     /**
@@ -46,7 +48,7 @@ class BlogController extends Controller
      */
     public function show(blog $blog)
     {
-        return view("blog.show");
+        return view("blog.show", ["blog"=> $blog]);
     }
 
     /**

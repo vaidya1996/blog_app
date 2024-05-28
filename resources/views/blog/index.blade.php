@@ -13,22 +13,26 @@
                                    </tr>
                             </thead>
                             <tbody>
+                                   @foreach ($blogs as $blog)
+
                                    <tr>
-                                          <td>1</td>
-                                          <td>Sample Title</td>
-                                          <td>Sample Content</td>
-                                          <td>2024-27-05 6:33:05</td>
+                                          <td>{{$blog->id}}</td>
+                                          <td>{{$blog->title}}</td>
+                                          <td>{{$blog->description}}</td>
+                                          <td>{{$blog->created_at}}</td>
                                           <td class="action-buttons">
-                                                 <a href="#" class="action-link view-link">View</a>
-                                                 <a href="#" class="action-link edit-link">Edit</a>
-                                                 <button onclick="return confirm('Are you sure want to delete?')"
-                                                        class="action-link delete-link">Delete</button>
+                                                        <a href="{{route('blog.show', $blog)}}" class="action-link view-link">View</a>
+                                                        <a href="#" class="action-link edit-link">Edit</a>
+                                                        <button onclick="return confirm('Are you sure want to delete?')"
+                                                                      class="action-link delete-link">Delete</button>
                                           </td>
                                    </tr>
+
+                                   @endforeach
                             </tbody>
                      </table>
                      <div class="pagination">
-
+                            {{$blogs->Links()}}
                      </div>
               </div>
        </div>
